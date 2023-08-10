@@ -21,8 +21,9 @@ public static class Extensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="moduleType"></param>
-    public static void AddModule(this IServiceCollection services, Type moduleType) 
+    public static void AddModule(this IServiceCollection services, Type? moduleType) 
     {
+        if(moduleType == null) return;
         var module = Activator.CreateInstance(moduleType) as IModule;
         module?.Load(services);
     }
@@ -33,9 +34,9 @@ public static class Extensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="module"></param>
-    public static void AddModule(this IServiceCollection services,IModule module)
+    public static void AddModule(this IServiceCollection services,IModule? module)
     {
-        module.Load(services);
+        module?.Load(services);
     }
 
 
@@ -44,8 +45,10 @@ public static class Extensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="assemblies"></param>
-    public static void AddModulesFromAssemblies(this IServiceCollection services, params Assembly[] assemblies)
+    public static void AddModulesFromAssemblies(this IServiceCollection services, params Assembly[]? assemblies)
     {
+        if(assemblies == null) return;
+        
         var types = assemblies.SelectMany(assembly =>
         {
             var scanner = new ModuleScanner(assembly);
