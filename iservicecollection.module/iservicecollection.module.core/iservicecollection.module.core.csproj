@@ -4,7 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Title>iservicecollection.module.core</Title>
+        <Title>iservicecollection.module</Title>
         <Authors>Marco Milani</Authors>
         <Description>IServiceCollection extensions to add Module with assembly scan</Description>
         <Copyright>Marco Milani</Copyright>
@@ -12,6 +12,8 @@
         <PackageLicenseUrl>https://github.com/markjackmilian/iservicecollection.module</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/markjackmilian/iservicecollection.module</RepositoryUrl>
         <PackageTags>servicecollection, extensions, module, assembly scan</PackageTags>
+        <PackageId>iservicecollection.module</PackageId>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
