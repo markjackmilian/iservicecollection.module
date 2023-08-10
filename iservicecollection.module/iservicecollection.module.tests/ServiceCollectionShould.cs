@@ -38,7 +38,7 @@ public class ServiceCollectionShould
     public void AddModuleUsingAssemblyScan()
     {
         var serviceCollection = new ServiceCollection();
-        serviceCollection.ScanModules(typeof(ServiceCollectionShould).Assembly);
+        serviceCollection.AddModulesFromAssemblies(typeof(ServiceCollectionShould).Assembly);
         
         Assert.Contains(serviceCollection, a => a.ServiceType == typeof(ITest));
     }

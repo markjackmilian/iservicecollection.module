@@ -44,7 +44,7 @@ public static class Extensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="assemblies"></param>
-    public static void ScanModules(this IServiceCollection services, params Assembly[] assemblies)
+    public static void AddModulesFromAssemblies(this IServiceCollection services, params Assembly[] assemblies)
     {
         var types = assemblies.SelectMany(assembly =>
         {
