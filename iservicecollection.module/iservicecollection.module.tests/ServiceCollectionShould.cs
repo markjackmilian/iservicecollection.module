@@ -17,6 +17,15 @@ public class ServiceCollectionShould
     }
     
     [Fact]
+    public void AddModuleUsingType()
+    {
+        var serviceCollection = new ServiceCollection();
+        serviceCollection.AddModule(typeof(TestModule));
+        
+        Assert.Contains(serviceCollection, a => a.ServiceType == typeof(ITest));
+    }
+    
+    [Fact]
     public void AddModuleUsingInstance()
     {
         var serviceCollection = new ServiceCollection();
